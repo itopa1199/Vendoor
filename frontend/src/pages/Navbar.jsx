@@ -22,9 +22,53 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+
+  // Persisted theme: toggles the `dark` class on <html> so Tailwind dark variants apply site-wide
   const [dark, setDark] = useState(false);
-  const handleDark = () => {
-    setDark(!dark);
+
+  // Initialize theme from localStorage or system preference
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (
+      saved === "dark" ||
+      (!saved &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setTheme("dark");
+      setDark(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("");
+      setDark(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  // Apply/remove `dark` class when theme state changes and persist selection
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setDark(false);
+    }
+  }, [theme]);
+
+  const handleDark = (e) => {
+    // If the click originated from inside the button, ignore here (the button handles the intent).
+    if (
+      e &&
+      e.target &&
+      typeof e.target.closest === "function" &&
+      e.target.closest("button")
+    )
+      return;
+    // toggle theme value which triggers effect above
+    setTheme((prev) => (prev === "dark" ? "" : "dark"));
   };
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -120,33 +164,32 @@ const Navbar = () => {
         </div>
         <ul className="p-4 justify-between items-center pb-9.5 hidden md:flex">
           <li className="">
-            <div
-              onClick={handleDark}
-              className="border-rounded-full p-2 cursor-pointer"
-            >
+            <div className="border-rounded-full p-2 cursor-pointer">
               {dark ? (
                 <button
-                  onClick={() => {
+                  aria-label="Toggle dark mode"
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setTheme("");
                   }}
                 >
-                  {" "}
                   <BiSun
                     size={45}
                     className="hover:bg-amber-500 border-transparent p-3 p rounded-full text-black dark:text-white"
-                  />{" "}
+                  />
                 </button>
               ) : (
                 <button
-                  onClick={() => {
+                  aria-label="Toggle dark mode"
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setTheme("dark");
                   }}
                 >
-                  {" "}
                   <AiOutlineMoon
                     size={45}
                     className="dark:text-white hover:bg-amber-500 border-transparent p-3 rounded-full text-black"
-                  />{" "}
+                  />
                 </button>
               )}
             </div>
@@ -275,33 +318,32 @@ const Navbar = () => {
         </div>
         <ul className="p-4 justify-between items-center pb-9.5 hidden md:flex">
           <li className="pr-4">
-            <div
-              onClick={handleDark}
-              className="border-rounded-full p-2 cursor-pointer"
-            >
+            <div className="border-rounded-full p-2 cursor-pointer">
               {dark ? (
                 <button
-                  onClick={() => {
+                  aria-label="Toggle dark mode"
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setTheme("");
                   }}
                 >
-                  {" "}
                   <BiSun
                     size={45}
                     className="hover:bg-amber-500 border-transparent p-3 rounded-full text-black dark:text-white"
-                  />{" "}
+                  />
                 </button>
               ) : (
                 <button
-                  onClick={() => {
+                  aria-label="Toggle dark mode"
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setTheme("dark");
                   }}
                 >
-                  {" "}
                   <AiOutlineMoon
                     size={45}
                     className="dark:text-white hover:bg-amber-500 border-transparent p-3 rounded-full text-black"
-                  />{" "}
+                  />
                 </button>
               )}
             </div>
