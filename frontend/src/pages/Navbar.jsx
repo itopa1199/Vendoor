@@ -105,20 +105,20 @@ const Navbar = () => {
       className={`${theme ? "dark" : ""} 
     fixed top-0 left-0 w-full z-50
     bg-white/10 dark:bg-black/90
-    backdrop-blur-lg
+
     border-b border-white/20 dark:border-black/60
     text-black dark:text-white
   `}
     >
-      <div className="z-50 bg-transparent flex px-4 h-24 max-w-[1240px] mx-auto justify-between items-center">
-        <ul className="pb-9 md:flex">
-          <li className="p-4">
-            <h1 className=" text-xl font-bold text-blue-600 pl-5">Vendoor</h1>
+      <div className="z-50 bg-transparent flex px-4 h-16 max-w-[1240px] mx-auto justify-between items-center">
+        <ul className="pb-4 md:flex">
+          <li className="p-2">
+            <h1 className=" text-lg font-bold text-blue-600 pl-3">Vendoor</h1>
           </li>
-          <li className="p-4 pt-5.5 hidden md:flex text-sm">Home</li>
-          <li className="p-4 pt-5.5 hidden md:flex text-sm">Explore</li>
+          <li className="p-2 pt-3 hidden md:flex text-sm">Home</li>
+          <li className="p-2 pt-3 hidden md:flex text-sm">Explore</li>
         </ul>
-        <div className="md:hidden flex justify-center items-center pb-6.5">
+        <div className="md:hidden flex justify-center items-center pb-3">
           <div
             onClick={handleDark}
             className="border-rounded-full p-2 cursor-pointer"
@@ -162,7 +162,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <ul className="p-4 justify-between items-center pb-9.5 hidden md:flex">
+        <ul className="p-4 pt-2 justify-between items-center pb-9.5 hidden md:flex">
           <li className="">
             <div className="border-rounded-full p-2 cursor-pointer">
               {dark ? (
@@ -209,8 +209,8 @@ const Navbar = () => {
               {open && (
                 <div
                   className="
-                      absolute right-0 mt-2 w-64 rounded-xl bg-white shadow-lg
-                      transition-all duration-200 p-4 pr-6 space-y-3 z-50 whitespace-nowrap
+                      absolute right-0 mt-2 w-64 rounded-xl bg-white
+                      transition-all duration-200 p-3 pr-4 space-y-3 z-50 whitespace-nowrap
                       dark:bg-zinc-950
                     "
                   onMouseEnter={() => setOpen(true)}
@@ -240,11 +240,11 @@ const Navbar = () => {
               : "fixed -left-full ease-in-out duration-500"
           }
         >
-          <ul className="uppercase p-4">
-            <li className="p-4 border-b border-gray-600">Home</li>
-            <li className="p-4 border-b border-gray-600">Explore</li>
-            <li className="p-4 border-b border-gray-600">Dashboard</li>
-            <li className="p-4 border-b border-gray-600">
+          <ul className="uppercase p-2">
+            <li className="p-2 border-b border-gray-600">Home</li>
+            <li className="p-2 border-b border-gray-600">Explore</li>
+            <li className="p-2 border-b border-gray-600">Dashboard</li>
+            <li className="p-2 border-b border-gray-600">
               <button onClick={handleLogout}>
                 {" "}
                 <Link to="/login">Log out</Link>
@@ -259,20 +259,20 @@ const Navbar = () => {
       className={`${theme ? "dark" : ""} 
     fixed top-0 left-0 w-full z-50
     bg-white/10 dark:bg-black/90
-    backdrop-blur-lg
+
     border-b border-white/20 dark:border-black/60
     text-black dark:text-white
   `}
     >
-      <div className="z-50 bg-transparent flex px-4 h-24 max-w-[1240px] mx-auto justify-between items-center">
-        <ul className="pb-9 md:flex">
-          <li className="p-4">
-            <h1 className=" text-xl font-bold text-blue-600 pl-5">Vendoor</h1>
+      <div className="z-50 bg-transparent flex px-4 h-16 max-w-[1240px] mx-auto justify-between items-center">
+        <ul className="pb-4 md:flex">
+          <li className="p-2">
+            <h1 className=" text-lg font-bold text-blue-600 pl-3">Vendoor</h1>
           </li>
-          <li className="p-4 pt-5.5 hidden md:flex text-sm">Home</li>
-          <li className="p-4 pt-5.5 hidden md:flex text-sm">Explore</li>
+          <li className="p-2 pt-3 hidden md:flex text-sm">Home</li>
+          <li className="p-2 pt-3 hidden md:flex text-sm">Explore</li>
         </ul>
-        <div className="md:hidden flex justify-center items-center pb-6.5">
+        <div className="md:hidden flex justify-center items-center pb-3">
           <div
             onClick={handleDark}
             className="border-rounded-full p-2 cursor-pointer"
@@ -316,7 +316,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <ul className="p-4 justify-between items-center pb-9.5 hidden md:flex">
+        <ul className="p-4 pt-2 justify-between items-center pb-9.5 hidden md:flex">
           <li className="pr-4">
             <div className="border-rounded-full p-2 cursor-pointer">
               {dark ? (

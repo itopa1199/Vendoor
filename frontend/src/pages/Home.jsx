@@ -8,7 +8,7 @@ const Home = () => {
       <Navbar />
       <div
         className={`
-    mt-24 w-full
+    mt-16 w-full
     bg-white/10 dark:bg-black/90
     backdrop-blur-lg
     border-b border-white/20 dark:border-black/60
