@@ -104,9 +104,9 @@ const Navbar = () => {
     <div
       className={`${theme ? "dark" : ""} 
     fixed top-0 left-0 w-full z-50
-    bg-white/10 dark:bg-black/20
+    bg-white/10 dark:bg-black/90
     backdrop-blur-lg
-    border-b border-white/20 dark:border-white/10
+    border-b border-white/20 dark:border-black/60
     text-black dark:text-white
   `}
     >
@@ -211,20 +211,20 @@ const Navbar = () => {
                   className="
                       absolute right-0 mt-2 w-64 rounded-xl bg-white shadow-lg
                       transition-all duration-200 p-4 pr-6 space-y-3 z-50 whitespace-nowrap
-                      dark:bg-zinc-900
+                      dark:bg-zinc-950
                     "
                   onMouseEnter={() => setOpen(true)}
                   onMouseLeave={() => setOpen(false)}
                 >
-                  <a className="block text-gray-700 dark:hover:text-white dark:text-gray-200 cursor-pointer">
+                  <a className="block text-gray-700 dark:hover:text-white dark:text-gray-100 cursor-pointer">
                     Dashboard
                   </a>
-                  <a className="block text-gray-700 dark:hover:text-white dark:text-gray-200 cursor-pointer">
+                  <a className="block text-gray-700 dark:hover:text-white dark:text-gray-100 cursor-pointer">
                     Returns
                   </a>
                   <a
                     onClick={handleLogout}
-                    className="block text-gray-700 dark:hover:text-white dark:text-gray-200 cursor-pointer border-t pt-2 mt-2"
+                    className="block text-gray-700 dark:hover:text-white dark:text-gray-100 cursor-pointer border-t pt-2 mt-2"
                   >
                     <Link to="/login">Log out</Link>
                   </a>
@@ -236,7 +236,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-white text-black dark:bg-zinc-800 dark:text-white ease-in-out duration-500"
+              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-white text-black dark:bg-zinc-900 dark:text-white ease-in-out duration-500"
               : "fixed -left-full ease-in-out duration-500"
           }
         >
@@ -258,9 +258,9 @@ const Navbar = () => {
     <div
       className={`${theme ? "dark" : ""} 
     fixed top-0 left-0 w-full z-50
-    bg-white/10 dark:bg-black/20
+    bg-white/10 dark:bg-black/90
     backdrop-blur-lg
-    border-b border-white/20 dark:border-white/10
+    border-b border-white/20 dark:border-black/60
     text-black dark:text-white
   `}
     >
@@ -358,7 +358,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-white text-black dark:bg-zinc-800 dark:text-white ease-in-out duration-500"
+              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-white text-black dark:bg-zinc-900 dark:text-white ease-in-out duration-500"
               : "fixed -left-full ease-in-out duration-500"
           }
         >
