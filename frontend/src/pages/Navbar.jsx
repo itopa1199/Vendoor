@@ -81,7 +81,7 @@ const Navbar = () => {
         "http://localhost:3000/api/auth/getUserDetails",
         {
           withCredentials: true,
-        }
+        },
       );
       setUser(response.data);
     } catch (error) {}
@@ -93,7 +93,7 @@ const Navbar = () => {
         {},
         {
           withCredentials: true,
-        }
+        },
       );
       navigate("/login");
     } catch (error) {
@@ -111,7 +111,7 @@ const Navbar = () => {
   `}
     >
       <div className="z-50 bg-transparent flex px-4 h-16 max-w-[1240px] mx-auto justify-between items-center">
-        <ul className="pb-4 md:flex">
+        <ul className="pb-0 md:flex md:items-center md:space-x-6">
           <li className="p-2">
             <h1 className=" text-lg font-bold text-blue-600 pl-3">Vendoor</h1>
           </li>
@@ -162,8 +162,8 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <ul className="p-4 pt-2 justify-between items-center pb-9.5 hidden md:flex">
-          <li className="">
+        <ul className="hidden md:flex md:items-center md:space-x-4 md:p-0">
+          <li>
             <div className="border-rounded-full p-2 cursor-pointer">
               {dark ? (
                 <button
@@ -265,7 +265,7 @@ const Navbar = () => {
   `}
     >
       <div className="z-50 bg-transparent flex px-4 h-16 max-w-[1240px] mx-auto justify-between items-center">
-        <ul className="pb-4 md:flex">
+        <ul className="pb-0 md:flex md:items-center md:space-x-6">
           <li className="p-2">
             <h1 className=" text-lg font-bold text-blue-600 pl-3">Vendoor</h1>
           </li>
@@ -316,7 +316,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <ul className="p-4 pt-2 justify-between items-center pb-9.5 hidden md:flex">
+        <ul className="hidden md:flex md:items-center md:space-x-4 md:p-0">
           <li className="pr-4">
             <div className="border-rounded-full p-2 cursor-pointer">
               {dark ? (
